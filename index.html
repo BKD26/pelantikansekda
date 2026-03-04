@@ -214,6 +214,23 @@ function bukaUndangan(){
 
     }, 500);
 }
+
+// 🎼 Hentikan musik saat halaman ditutup / refresh
+window.addEventListener("beforeunload", function () {
+    const musik = document.getElementById("musik");
+    if (musik) {
+        musik.pause();
+        musik.currentTime = 0;
+    }
+});
+
+// 🎵 Hentikan musik saat pindah tab
+document.addEventListener("visibilitychange", function () {
+    const musik = document.getElementById("musik");
+    if (document.hidden && musik) {
+        musik.pause();
+    }
+});
 </script>
 
 </body>
