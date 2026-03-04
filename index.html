@@ -6,10 +6,21 @@
 <title>Undangan Pelantikan</title>
 
 <meta name="description" content="Undangan Resmi Pelantikan Pemerintah Kabupaten Boven Digoel">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Undangan Pelantikan">
+<meta property="og:description" content="Undangan Resmi Pelantikan">
+<meta property="og:image" content="https://bkd26.github.io/pelantikan23/preview.jpg">
+<meta property="og:url" content="https://bkd26.github.io/pelantikan23/">
+<meta property="og:site_name" content="pelantikan23">
+<meta property="og:locale" content="id_ID">
+
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="icon" href="logo.png">
 
 <style>
-/* === CSS TETAP SAMA === */
 body{
     margin:0;
     font-family:'Segoe UI',sans-serif;
@@ -19,6 +30,7 @@ body{
     overflow-x:hidden;
 }
 
+/* COVER */
 .cover{
     height:100vh;
     display:flex;
@@ -47,10 +59,15 @@ body{
     z-index:0;
 }
 
+.cover > *{
+    position:relative;
+    z-index:1;
+}
 
-.cover > *{ position:relative; z-index:1; }
-
-.logo{ width:180px; margin-bottom:20px; }
+.logo{
+    width:180px;
+    margin-bottom:20px;
+}
 
 button{
     padding:15px 35px;
@@ -64,8 +81,11 @@ button{
     font-weight:bold;
 }
 
-button:hover{ background:#ffd700; }
+button:hover{
+    background:#ffd700;
+}
 
+/* ISI */
 .isi{
     display:none;
     background:white;
@@ -76,42 +96,58 @@ button:hover{ background:#ffd700; }
 }
 
 .card{
-    position:relative;
     background:#f4f4f4;
     padding:25px;
     margin:20px auto;
     border-radius:15px;
     max-width:420px;
     box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.card-undangan{
+    position:relative;
     overflow:hidden;
 }
 
-.card::before{
+.card-undangan::before{
     content:"";
     position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     background-image:url('patung.png');
     background-size:cover;
     background-position:center;
-    opacity:0.12;
+    background-repeat:no-repeat;
+    opacity:0.32;
     z-index:0;
 }
 
-.card > *{ position:relative; z-index:1; }
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
+.card-undangan > *{
+    position:relative;
+    z-index:1;
 }
 
-.button,
+.btn-lokasi{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:#0b3d91;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.icon-lokasi{
+    width:20px;
+    height:20px;
+}
+
 .drive-btn{
     display:inline-block;
     margin-top:15px;
-    padding:10px 20px;
-    min-width:150px;
-    text-align:center;
+    padding:12px 25px;
     background:#0b3d91;
     color:white;
     text-decoration:none;
@@ -120,16 +156,30 @@ button:hover{ background:#ffd700; }
     transition:0.3s;
 }
 
-.button:hover,
 .drive-btn:hover{
     background:#ffd700;
     color:black;
 }
 
-.dokumen-section{
-    margin-top:15px;
-    padding-top:15px;
-    border-top:1px solid rgba(0,0,0,0.2);
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:768px){
+    .cover::before{
+        background-size:160px,160px;
+        background-position:10% bottom, 90% bottom;
+        height:55%;
+    }
+
+    .logo{
+        width:140px;
+    }
+
+    .card{
+        max-width:90%;
+    }
 }
 </style>
 </head>
